@@ -1,0 +1,84 @@
+{
+  "modules": [
+    {
+      "name": "core/env",
+      "sha256": "333c529d6bbfacde568f2ec1013661888b09576ac49cc2797d3ae0ef480ff254"
+    },
+    {
+      "name": "core/fusion",
+      "sha256": "49e50f94cda2d2874a5f0e09516fd8b590790221f069ef11b1fcd49a99e995cb"
+    },
+    {
+      "name": "core/limits",
+      "sha256": "2ba9eb56ecd51e1d2635f759dbc7e3c2669934ffd5e17fdc2d9f4c5514b8f32f"
+    },
+    {
+      "name": "core/match",
+      "sha256": "4bbbe1d271fdd3250de72bf9bccc2521f1f81a85f771e0f23088d245df4bd480"
+    },
+    {
+      "name": "core/profile",
+      "sha256": "32f66916720d083b10b10b9d6b91b86caabe23858fbf77a0cc9f1f59c8c35981"
+    },
+    {
+      "name": "core/sim",
+      "sha256": "954b5d3db0f0e2561a804c190d6c2d8f16f6d5643f1f6ca643e06d5bbbd7128c"
+    },
+    {
+      "name": "core/solver",
+      "sha256": "6ac2aac4a818f4e629d8b1edc69cd908fee4e36cb018cef1c5e99d8dfa71d829"
+    },
+    {
+      "name": "core/stats",
+      "sha256": "7fa419a02979276c4d7bd7a96b4260ecf498e8e5b77a732b56112e018cd3d876"
+    },
+    {
+      "name": "core/trajectory",
+      "sha256": "ec18c5beefdebac48ba12b5d760bb7edc1266399d8b1c3e68dd473c5b1aec75a"
+    },
+    {
+      "name": "core/upgrades",
+      "sha256": "99e16ed2485f24618550678a712ad7fd0ab568c3b029a89c2af2f3ed8068a6b5"
+    },
+    {
+      "name": "features/duel",
+      "sha256": "e4cf3a83d94d91620710fb6adf2cd9cf3b4abd2f73d4add9c856581a3e89b5fb"
+    },
+    {
+      "name": "features/home",
+      "sha256": "e6fc3af15301b2c9146ec8155cf89b2363a903541d686404ea0a1d3e669411b1"
+    },
+    {
+      "name": "features/intel",
+      "sha256": "0912b52ac803e516481cef8bb1d390303d24f5762fb2292d71f884470e04c89c"
+    },
+    {
+      "name": "features/rewards",
+      "sha256": "86e18d702477280f6b2d64efb3b7d4ec0ae00158418288ea43ce140c4c596710"
+    },
+    {
+      "name": "features/settings",
+      "sha256": "c8b6d4b3d9a431df54a84536fa02196e40ac3cb58a605438b465792900a26360"
+    },
+    {
+      "name": "main",
+      "sha256": "b9c9243225de1311790f8ee9c92e3427f06a4601f43208726e21a9ba41f8b41f"
+    },
+    {
+      "name": "shared/env",
+      "sha256": "ba1c4f26f8b382c740c7e3160429fd52563f45b52355b3ade2a04333d842e182"
+    },
+    {
+      "name": "shared/life",
+      "sha256": "c8ba7db832bd85a399bcde5259e5dee73b71a25060711ee5fc65d970f0d3540c"
+    },
+    {
+      "name": "shared/performance",
+      "sha256": "5780963483c39280efefea226e1e64065eb7673be2617c5fb609f638eea8fdbd"
+    },
+    {
+      "name": "shared/webhook",
+      "sha256": "4dc73bd4801eed6f6e41ef6f8d2114252201c70a9f4e902a8dade1bbd916cf46"
+    }
+  ]
+}

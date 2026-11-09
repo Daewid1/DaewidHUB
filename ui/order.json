@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "parts": [
+    {
+      "path": "embedded-assets.lua"
+    },
+    {
+      "path": "lm_00_core.lua"
+    },
+    {
+      "path": "lm_01_tokens.lua"
+    },
+    {
+      "path": "lm_02_spring.lua"
+    },
+    {
+      "path": "lm_03_motion.lua"
+    },
+    {
+      "path": "lm_04_atoms.lua"
+    },
+    {
+      "path": "lm_19_focus.lua"
+    },
+    {
+      "path": "lm_05_window.lua"
+    },
+    {
+      "path": "lm_06_controls.lua"
+    },
+    {
+      "path": "lm_07_toast.lua"
+    },
+    {
+      "path": "lm_27_infinity.lua"
+    },
+    {
+      "path": "lm_16_theme.lua"
+    },
+    {
+      "path": "lm_17_palette.lua"
+    },
+    {
+      "path": "compat.lua"
+    },
+    {
+      "path": "runtime-ui.lua"
+    },
+    {
+      "path": "native-text.lua"
+    },
+    {
+      "path": "ui-skin.lua"
+    },
+    {
+      "path": "loader.lua"
+    },
+    {
+      "path": "adapter.lua"
+    }
+  ]
+}
