@@ -58,4 +58,3 @@ function Stats.against(ball, versus)
 end
 
 return Stats
-

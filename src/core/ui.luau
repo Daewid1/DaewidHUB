@@ -13,4 +13,3 @@ return Ui.create({
         { "Settings", "settings", "Menu, themes and configs" },
     },
 })
-

@@ -84,4 +84,3 @@ function Fusion.nextBatch(items, equipment, maxRating, reserved, allowedBall, mo
 end
 
 return Fusion
-

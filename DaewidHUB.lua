@@ -178,7 +178,6 @@ end
 
 return Env
 
-
 end
 modules["core/fusion"] = function(use)
 -- October 2026: rarity fusion takes ten Classic balls; form fusion takes six matching copies.
@@ -268,7 +267,6 @@ end
 
 return Fusion
 
-
 end
 modules["core/limits"] = function(use)
 -- How many duel coins are left today and this week. Duels pay nothing once either cap is reached
@@ -338,7 +336,6 @@ function Limits.candy()
 end
 
 return Limits
-
 
 end
 modules["core/match"] = function(use)
@@ -827,7 +824,6 @@ end)
 
 return Match
 
-
 end
 modules["core/profile"] = function(use)
 -- What we have learned about the people we duel, kept between sessions.
@@ -1102,7 +1098,6 @@ end
 Life.onCleanup(write)
 
 return Profile
-
 
 end
 modules["core/sim"] = function(use)
@@ -1457,7 +1452,6 @@ end)
 
 return Sim
 
-
 end
 modules["core/solver"] = function(use)
 -- Solves the aim phase as the game it actually is.
@@ -1726,7 +1720,6 @@ end
 
 return Solver
 
-
 end
 modules["core/stats"] = function(use)
 -- Every ball's win rate across all players, from the game's own BallBattleStats (the numbers its
@@ -1789,7 +1782,6 @@ function Stats.against(ball, versus)
 end
 
 return Stats
-
 
 end
 modules["core/trajectory"] = function(use)
@@ -1906,7 +1898,6 @@ Life.onCleanup(Trajectory.clear)
 
 return Trajectory
 
-
 end
 modules["core/ui"] = function(use)
 -- Ball VS Ball's window and tabs.
@@ -1924,7 +1915,6 @@ return Ui.create({
         { "Settings", "settings", "Menu, themes and configs" },
     },
 })
-
 
 end
 modules["core/upgrades"] = function(use)
@@ -2168,7 +2158,6 @@ function Upgrades.bestBySimulation(candidates, context)
 end
 
 return Upgrades
-
 
 end
 modules["features/duel"] = function(use)
@@ -15785,7 +15774,7 @@ end
 do
 -- Source-clocked media with a bounded set of display objects.
 local L=getgenv().__DAEWID_BALL_LUMEN
-local G=L.Giorgio or {}; L.Giorgio=G; 
+local G=L.Giorgio or {}; L.Giorgio=G;
 local M,T=L.Motion,L.T
 G.assets={["icons"]={["gauge"]={["type"]="atlas",["usage"]="Rep Root",["fps"]=120,["fps_ratio"]="120/1",["frames"]=253,["duration"]=2.1083333333333334,["folder"]="icons",["prefix"]="gauge-",["ext"]="png",["first"]=1,["digits"]=2,["count"]=253,["tileWidth"]=72,["tileHeight"]=72,["cols"]=14,["pageCount"]=2,["width"]=72,["height"]=72,["columns"]=14,["rows"]=14,["frames_per_page"]=196,["loop"]=false,["pages"]={{["path"]="icons/gauge-01.png",["bytes"]=47452,["sha256"]="90add73206515311714f5ebe5980dfa104f85e5e9dea4bfbbdb86697623f42f8",["first_frame"]=0,["frame_count"]=196,["width"]=1008,["height"]=1008},{["path"]="icons/gauge-02.png",["bytes"]=20367,["sha256"]="782f1a6ee1b6150a2860d15f553bf97a0c68482e08e294053f38cbd350d030bc",["first_frame"]=196,["frame_count"]=57,["width"]=1008,["height"]=360}},["source_url"]="https://api.github.com/repos/cyberalien/line-md/contents/svg-frames-120fps/gauge",["license"]="MIT",["attribution"]="Vjacheslav Trushkin (cyberalien), line-md"},["account"]={["type"]="atlas",["usage"]="Players",["fps"]=120,["fps_ratio"]="120/1",["frames"]=97,["duration"]=0.8083333333333333,["folder"]="icons",["prefix"]="account-",["ext"]="png",["first"]=1,["digits"]=2,["count"]=97,["tileWidth"]=72,["tileHeight"]=72,["cols"]=14,["pageCount"]=1,["width"]=72,["height"]=72,["columns"]=14,["rows"]=14,["frames_per_page"]=196,["loop"]=false,["pages"]={{["path"]="icons/account-01.png",["bytes"]=14674,["sha256"]="da73526f2556ac722d63206253ab8d3a741b93799554246d3b8265b54497ade0",["first_frame"]=0,["frame_count"]=97,["width"]=1008,["height"]=504}},["source_url"]="https://api.github.com/repos/cyberalien/line-md/contents/svg-frames-120fps/account",["license"]="MIT",["attribution"]="Vjacheslav Trushkin (cyberalien), line-md"},["compass"]={["type"]="atlas",["usage"]="Offsets",["fps"]=120,["fps_ratio"]="120/1",["frames"]=133,["duration"]=1.1083333333333334,["folder"]="icons",["prefix"]="compass-",["ext"]="png",["first"]=1,["digits"]=2,["count"]=133,["tileWidth"]=72,["tileHeight"]=72,["cols"]=14,["pageCount"]=1,["width"]=72,["height"]=72,["columns"]=14,["rows"]=14,["frames_per_page"]=196,["loop"]=false,["pages"]={{["path"]="icons/compass-01.png",["bytes"]=41479,["sha256"]="c4c8054315b8ad72f79cf2974f56ffd3b7fda8b6fa9d412e9638363ed730da36",["first_frame"]=0,["frame_count"]=133,["width"]=1008,["height"]=720}},["source_url"]="https://api.github.com/repos/cyberalien/line-md/contents/svg-frames-120fps/compass",["license"]="MIT",["attribution"]="Vjacheslav Trushkin (cyberalien), line-md"},["grid-3"]={["type"]="atlas",["usage"]="Presets",["fps"]=120,["fps_ratio"]="120/1",["frames"]=73,["duration"]=0.6083333333333333,["folder"]="icons",["prefix"]="grid-3-",["ext"]="png",["first"]=1,["digits"]=2,["count"]=73,["tileWidth"]=72,["tileHeight"]=72,["cols"]=14,["pageCount"]=1,["width"]=72,["height"]=72,["columns"]=14,["rows"]=14,["frames_per_page"]=196,["loop"]=false,["pages"]={{["path"]="icons/grid-3-01.png",["bytes"]=8182,["sha256"]="14ae547566a8b5bda2f47a47bbb6d46d89c184044cd4d384a35c7a9681b60ad3",["first_frame"]=0,["frame_count"]=73,["width"]=1008,["height"]=432}},["source_url"]="https://api.github.com/repos/cyberalien/line-md/contents/svg-frames-120fps/grid-3",["license"]="MIT",["attribution"]="Vjacheslav Trushkin (cyberalien), line-md"},["cog"]={["type"]="atlas",["usage"]="Interface",["fps"]=120,["fps_ratio"]="120/1",["frames"]=121,["duration"]=1.0083333333333333,["folder"]="icons",["prefix"]="cog-",["ext"]="png",["first"]=1,["digits"]=2,["count"]=121,["tileWidth"]=72,["tileHeight"]=72,["cols"]=14,["pageCount"]=1,["width"]=72,["height"]=72,["columns"]=14,["rows"]=14,["frames_per_page"]=196,["loop"]=false,["pages"]={{["path"]="icons/cog-01.png",["bytes"]=41305,["sha256"]="7305f885c4ceb11136797b0994a3f10825ed8eb69fa188326b322834aebccf3c",["first_frame"]=0,["frame_count"]=121,["width"]=1008,["height"]=648}},["source_url"]="https://api.github.com/repos/cyberalien/line-md/contents/svg-frames-120fps/cog",["license"]="MIT",["attribution"]="Vjacheslav Trushkin (cyberalien), line-md"},["document-list"]={["type"]="atlas",["usage"]="Activity",["fps"]=120,["fps_ratio"]="120/1",["frames"]=157,["duration"]=1.3083333333333333,["folder"]="icons",["prefix"]="document-list-",["ext"]="png",["first"]=1,["digits"]=2,["count"]=157,["tileWidth"]=72,["tileHeight"]=72,["cols"]=14,["pageCount"]=1,["width"]=72,["height"]=72,["columns"]=14,["rows"]=14,["frames_per_page"]=196,["loop"]=false,["pages"]={{["path"]="icons/document-list-01.png",["bytes"]=15701,["sha256"]="adb92d7315241f391dbd3627d4d1caed3d152eeef32ef437aea8303d305a3b29",["first_frame"]=0,["frame_count"]=157,["width"]=1008,["height"]=864}},["source_url"]="https://api.github.com/repos/cyberalien/line-md/contents/svg-frames-120fps/document-list",["license"]="MIT",["attribution"]="Vjacheslav Trushkin (cyberalien), line-md"},["loading-twotone-loop"]={["type"]="atlas",["usage"]="Loading",["fps"]=120,["fps_ratio"]="120/1",["frames"]=325,["duration"]=2.7083333333333335,["folder"]="icons",["prefix"]="loading-twotone-loop-",["ext"]="png",["first"]=1,["digits"]=2,["count"]=325,["tileWidth"]=72,["tileHeight"]=72,["cols"]=14,["pageCount"]=2,["width"]=72,["height"]=72,["columns"]=14,["rows"]=14,["frames_per_page"]=196,["loop"]=true,["pages"]={{["path"]="icons/loading-twotone-loop-01.png",["bytes"]=86066,["sha256"]="d837f46aaa2bf938959e35e3bc9cf9fd86db0e831bf01ba18ba108e97dd7339e",["first_frame"]=0,["frame_count"]=196,["width"]=1008,["height"]=1008},{["path"]="icons/loading-twotone-loop-02.png",["bytes"]=64982,["sha256"]="e561ece00a96a3bf84721f4b1f57c471bcb853d6ddd822db2d88b017ab37ccca",["first_frame"]=196,["frame_count"]=129,["width"]=1008,["height"]=720}},["source_url"]="https://api.github.com/repos/cyberalien/line-md/contents/svg-frames-120fps/loading-twotone-loop",["license"]="MIT",["attribution"]="Vjacheslav Trushkin (cyberalien), line-md"}},["sounds"]={["hover"]="sounds/hover.ogg",["click"]="sounds/click.ogg",["tab"]="sounds/tab.ogg",["toggle_on"]="sounds/toggle_on.ogg",["toggle_off"]="sounds/toggle_off.ogg",["open"]="sounds/open.ogg",["close"]="sounds/close.ogg",["saved"]="sounds/saved.ogg",["loader"]="sounds/loader.ogg"}}
 G.assetRoot="DaewidHUB/ui/giorgio/"

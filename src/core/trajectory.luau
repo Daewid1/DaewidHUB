@@ -110,4 +110,3 @@ Life.loop("duel:trajectory", 0.1, refresh)
 Life.onCleanup(Trajectory.clear)
 
 return Trajectory
-
