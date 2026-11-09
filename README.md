@@ -4,7 +4,17 @@ Ball VS Ball controls in the original Giorgio/Lumen interface, tailored for Daew
 
 ## Run
 
-Execute Loader.lua in your compatible executor. The loader uses request(), validates the HTTP response and loads a pinned DaewidHUB.lua revision. All UI icons and sounds are embedded in the runtime: there is no video, edits folder or media-pack download.
+Execute this in your compatible executor:
+
+~~~lua
+local response = request({Url = "https://raw.githubusercontent.com/Daewid1/DaewidHUB/main/Loader.lua", Method = "GET"})
+assert(response.StatusCode == 200 and response.Success ~= false, "DaewidHUB loader download failed")
+local run, reason = loadstring(response.Body)
+assert(run, reason)
+run()
+~~~
+
+Alternatively execute Loader.lua directly. The loader uses request(), validates the HTTP response and loads a pinned DaewidHUB.lua revision. All UI icons and sounds are embedded in the runtime: there is no video, edits folder or media-pack download.
 
 - Original charcoal/ivory styling, spring interactions, animated sidebar icons and opening sequence.
 - Original corner-dot/infinity minimize-and-restore interaction, command palette and compact shortcut HUD.

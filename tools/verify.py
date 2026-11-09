@@ -36,7 +36,7 @@ def main():
         assert len(data) == int(size), path
         assert path.startswith(("icons/", "sounds/")) and ".." not in path
     print("PASS: 18 embedded icon/sound assets; no film UI or remote media install")
-    sources = [str(ROOT / "DaewidHUB.lua")] + [str(path) for path in (ROOT / "src").rglob("*.luau")]
+    sources = [str(ROOT / "DaewidHUB.lua"), str(ROOT / "Loader.lua")] + [str(path) for path in (ROOT / "src").rglob("*.luau")]
     subprocess.run([args.compiler, "--null", *sources], check=True)
     fixtures = [
         ("controls", (ROOT / "ui/lm_06_controls.lua").read_text(encoding="utf-8")),
@@ -50,6 +50,33 @@ def main():
             fixture = Path(temporary) / (name + ".luau")
             fixture.write_text(prefix + "\n" + source + "\n" + suffix, encoding="utf-8")
             subprocess.run([args.luau, str(fixture)], check=True)
+        loader = (ROOT / "Loader.lua").read_text(encoding="utf-8")
+        for scenario in ("retry", "failed", "compile"):
+            fixture = Path(temporary) / ("loader-" + scenario + ".luau")
+            prefix = '''local attempts = 0
+local task = { wait = function() end }
+local request = function(options)
+    attempts += 1
+    assert(options.Method == "GET" and options.Url:find("/DaewidHUB/", 1, true))
+    if SCENARIO == "failed" or SCENARIO == "retry" and attempts < 2 then return { StatusCode = 429 } end
+    return { StatusCode = 200, Success = true, Body = "fixture" }
+end
+local loadstring = function(body)
+    assert(body == "fixture")
+    if SCENARIO == "compile" then return nil, "invalid source" end
+    return function() return "loaded" end
+end
+local ok, result = pcall(function()
+'''.replace("SCENARIO", repr(scenario))
+            suffix = '''
+end)
+if SCENARIO == "retry" then assert(ok and result == "loaded" and attempts == 2)
+elseif SCENARIO == "failed" then assert(not ok and attempts == 3 and result:find("HTTP 429", 1, true))
+else assert(not ok and attempts == 1 and result:find("invalid source", 1, true)) end
+'''.replace("SCENARIO", repr(scenario))
+            fixture.write_text(prefix + loader + suffix, encoding="utf-8")
+            subprocess.run([args.luau, str(fixture)], check=True)
+        print("PASS: loader retries, HTTP failures and compilation errors")
         spring = Path(temporary) / "spring.luau"
         spring.write_text('local L = {}\nlocal function getgenv() return { __DAEWID_BALL_LUMEN = L } end\n' +
             (ROOT / "ui/lm_02_spring.lua").read_text(encoding="utf-8") +
